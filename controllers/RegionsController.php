@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use dektrium\user\filters\AccessRule;
 
 /**
  * RegionsController implements the CRUD actions for Regions model.
@@ -27,22 +28,19 @@ class RegionsController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-            // 'access' => [
-            //     'class' => AccessControl::className(),
-            //     'only' => ['index', 'view', 'create', 'update', 'delete', 'summary'],
-            //     'rules' => [
-            //         [
-            //             'allow' => true,
-            //             'actions' => ['login', 'signup'],
-            //             'roles' => ['?'],
-            //         ],
-            //         [
-            //             'allow' => true,
-            //             'actions' => ['index', 'view', 'create', 'update', 'delete', 'summary'],
-            //             'roles' => ['@'],
-            //         ],
-            //     ],
-            // ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'ruleConfig' => [
+      			        'class' => AccessRule::className(),
+      			    ],
+                'rules' => [
+                    [
+                        'actions' => ['update', 'create', 'index', 'delete', 'view', 'summary'],
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
         ];
     }
 

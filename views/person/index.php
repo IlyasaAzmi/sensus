@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PersonSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'People';
+$this->title = 'Data Penduduk';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="person-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Person', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Penduduk', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -27,7 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'region_id',
+            // 'region_id',
+            [
+                'class' => 'yii\grid\DataColumn',
+                'attribute'=>'region_id',
+                'label' => 'Region',
+                'filter'=>array($region),
+                'value'=>function($model){
+                    return $model->regions->name;
+                }
+            ],
             'address',
             'income:currency',
             //'created_at',

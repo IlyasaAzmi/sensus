@@ -55,9 +55,13 @@ class PersonController extends Controller
         $searchModel = new PersonSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $region = Regions::find()->all();
+        $region = ArrayHelper::map($region, 'id', 'name');
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'region' => $region
         ]);
     }
 

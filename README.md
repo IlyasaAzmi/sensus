@@ -2,6 +2,7 @@
 <p>
     <ol>
         <li>import database (sensus.sql)</li>
+        <li>pastikan sudah ada composer, jalankan command "composer update" pada direktori web
         <li>jalankan command "php yii serve" pada direktori web</li>
         <li>copy paste alamat direktori ke browser</li>
     </ol>

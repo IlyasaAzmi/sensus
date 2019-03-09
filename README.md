@@ -1,12 +1,19 @@
-<p>Sistem Informasi Sensus Penduduk <br>
+<h1 align="center">Sistem Informasi Sensus Penduduk</h1>
+<p>
+    <ol>
+        <li>import database (sensus.sql)</li>
+        <li>jalankan command "php yii serve" pada direktori web</li>
+        <li>copy paste alamat direktori ke browser</li>
+    </ol>
+</p>
+
 login:<br>
-user: azmi
-password: 123456<br>
-    </p>
-    <p>
-database: sensus.sql<br>
-import database tersebut sebelum menjalankan aplikasi
-    </p>
+<ul>
+    <li>user: azmi</li>
+    <li>password: 123456</li>
+</ul>
+</p>
+
 
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">

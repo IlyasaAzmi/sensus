@@ -1,8 +1,13 @@
 <p>Sistem Informasi Sensus Penduduk <br>
 login:<br>
 user: azmi
-password: 123456
-</p>
+password: 123456<br>
+    </p>
+    <p>
+database: sensus.sql<br>
+import database tersebut sebelum menjalankan aplikasi
+    </p>
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
